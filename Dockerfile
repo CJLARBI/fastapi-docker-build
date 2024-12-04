@@ -21,7 +21,8 @@ FROM python:3.10-slim
 WORKDIR /src
 
 # Install dependencies
-COPY requirements.txt .
+COPY src/requirements.txt .
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy source code
@@ -31,10 +32,12 @@ COPY src/ .
 COPY src/data /src/data
 
 # Remove or adjust the following if the models directory doesn't exist
-# COPY models /app/models 
+COPY src/Models /src/Models 
 
 # Expose port
 EXPOSE 8000
 
+ENV PYTHONPATH=/src
+
 # Start the FastAPI application
-CMD ["uvicorn", "src.mlapi:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "mlapi:app", "--host", "0.0.0.0", "--port", "8000"]
