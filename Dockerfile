@@ -29,7 +29,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src/ .
 
 # Fix path to data folder
-COPY src/data /src/data
+#COPY src/data /src/data
 
 # Remove or adjust the following if the models directory doesn't exist
 COPY src/Models /src/Models 

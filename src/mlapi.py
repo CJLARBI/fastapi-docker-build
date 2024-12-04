@@ -21,9 +21,9 @@ app = FastAPI(
 
 # Model paths (these can later be moved to environment variables)
 Model_Path = {
-    "DecisionTree": "src/Models/Decision Tree_pipeline.pkl",
-    "RandomForest": "src/Models/Random Forest_pipeline.pkl",
-    "LogisticRegression": "src/Models/Logistic Regression_pipeline.pkl",
+    "DecisionTree": "src/Models/Decision_Tree_pipeline.pkl",
+    "RandomForest": "src/Models/Random_Forest_pipeline.pkl",
+    "LogisticRegression": "src/Models/Logistic_Regression_pipeline.pkl",
     "KNN": "src/Models/KNN_pipeline.pkl"
 }
 
