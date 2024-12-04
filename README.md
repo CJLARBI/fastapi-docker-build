@@ -175,12 +175,12 @@ If the uploaded file is not a CSV file, the API will return a 400 error.
 
 ### About the Author
 
-This FastAPI application was developed by me,David Zodanu, a passionate data analyst and machine learning enthusiast. With a background in data analysis and AI, David has been working on projects that leverage machine learning models to provide meaningful insights and predictions.
+This FastAPI application was developed by David Zodanu, a passionate data analyst and machine learning enthusiast with a strong background in data analysis and artificial intelligence. David is dedicated to leveraging machine learning models to deliver actionable insights and accurate predictions.
 
-In this project, I integrated a machine learning model to predict medical conditions, offering an easy-to-use API for users to upload their data and receive predictions. The goal of this project is to bridge the gap between complex machine learning models and user-friendly interfaces, making machine learning more accessible to a wider audience.
+In this project, David integrated a machine learning model to predict medical conditions, creating an intuitive API that allows users to upload data and receive predictions seamlessly. The primary goal is to simplify the interaction between complex machine learning models and end-users, making advanced technologies more accessible and practical.
 
-I am committed to creating scalable, efficient, and practical machine learning solutions that can be applied to various industries, from healthcare to business analytics.
-
+David is committed to developing scalable, efficient, and impactful machine learning solutions that can be applied across diverse 
+industries, including healthcare and business analytics.
 
 
 ### Donor of database: 
@@ -188,6 +188,7 @@ I am committed to creating scalable, efficient, and practical machine learning s
                           Johns Hopkins Road
                           Laurel, MD 20707
                           (301) 953-6231
+
 
 
 ### License
