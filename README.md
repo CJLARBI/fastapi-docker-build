@@ -10,7 +10,22 @@ This project implements a Machine Learning (ML) API designed to predict whether 
 Introduction
 Features
 Dataset Overview
+Attribute Descriptions
+Hypothesis
+Sepsis Target
+Business Questions
 Technologies Used
+Setup Instructions
+Machine Learning Models
+Installation Requirements
+API Endpoints
+Troubleshooting
+Authorship
+Donor Acknowledgement
+License
+
+
+
 License
 
 ### Introduction
@@ -57,8 +72,9 @@ How does the number of pregnancies (PRG) vary between Positive and Negative Seps
 
 Question 5: How does the number of live births (PL) vary between Positive and Negative Sepsis outcomes?
 
-### Sepssis	Target	Positive:
+### Sepssis	Target:
 Patient in ICU will develop sepsis; Negative: Otherwise
+
 ### Technologies Used:
 Python: For building the machine learning model and API.
 FastAPI: To develop the RESTful API.
@@ -66,11 +82,113 @@ Scikit-learn: For machine learning model development.
 Docker: For containerization and deployment.
 NumPy and Pandas: For data processing and analysis.
 
+### Setup
+Sepsis Prediction API
+This is a Sepsis Prediction API built using FastAPI. The API allows users to upload a CSV file and predict sepsis risk based on a chosen machine learning model. The results are returned in JSON format, including both the original data and predictions.
+
+### Machine Learning Models
+Multiple Models: Choose between different pre-trained models for prediction:
+
+"DecisionTree"
+"RandomForest"
+"LogisticRegression"
+"KNN"
+CSV File Upload: Upload a CSV file with the necessary features for prediction.
+
+Prediction Output: Get a JSON response containing the original data along with the predictions for each row in a new column labeled Prediction.
+
+### Installation Requirements
+Python 3.7 or higher
+FastAPI
+Uvicorn
+Pandas
+Scikit-learn
+
+Step 1: Clone the repository
+bash
+Copy code
+git clone <repository-url>
+cd <repository-directory>
+
+Step 2: Install dependencies
+Create a virtual environment and install the required dependencies using pip:
+
+### bash
+Copy code
+python -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+pip install -r requirements.txt
+Step 3: Run the FastAPI server
+To start the FastAPI application, run the following command:
+
+### bash
+Copy code
+uvicorn.run("src.mlapi:app", reload=True)
+This will start the FastAPI app locally at http://127.0.0.1:8000.
+Copy URL and paste it in a new browser and add /docs eg. http://127.0.0.1:8000/docs to  access the API.
+
+### API Usage
+Endpoint: /predict
+Method: POST
+This endpoint allows you to make predictions using a specified model.
+
+Type in the name of the model you want to use for prediction.
+![alt text](<screenshots/Model parameter.png>)
+
+model (str) – The name of the model you wish to use for prediction. Available models:
+"DecisionTree"
+"RandomForest"
+"LogisticRegression"
+"KNN"
+
+Upload File:
+Navigate to the "Upload File" section and select a CSV file.
+![alt text](<screenshots/Upload file.png>)
+
+file (file) – A CSV file with the necessary features for prediction. The file should contain the following columns:
+"PRG", "PL", "PR", "SK", "TS", "M11", "BD2", "Age", "Insurance"
+
+### Response:
+A JSON response containing the predictions for each row in a new column labeled "Prediction".
+
+![alt text](<screenshots/Example of Prediction display.png>)
+
+
+### Troubleshooting
+1. Incorrect Number of Features
+If the number of features in the uploaded CSV file does not match what the model expects, the API will return an error. Ensure that the CSV file has the correct number of columns.
+
+2. Model Not Found
+If an invalid model is selected, the API will return a 400 error stating that the model was not found.
+
+3. Invalid File Format
+If the uploaded file is not a CSV file, the API will return a 400 error.
+
+### Glance view of API application
+![alt text](<screenshots/Another sepsis.png>)
+
+![alt text](<screenshots/Another sepsis1.png>)
+
+
+![alt text](<screenshots/Another sepsis3.png>)
+
+
+### About the Author
+
+This FastAPI application was developed by me,David Zodanu, a passionate data analyst and machine learning enthusiast. With a background in data analysis and AI, David has been working on projects that leverage machine learning models to provide meaningful insights and predictions.
+
+In this project, I integrated a machine learning model to predict medical conditions, offering an easy-to-use API for users to upload their data and receive predictions. The goal of this project is to bridge the gap between complex machine learning models and user-friendly interfaces, making machine learning more accessible to a wider audience.
+
+I am committed to creating scalable, efficient, and practical machine learning solutions that can be applied to various industries, from healthcare to business analytics.
+
+
+
 ### Donor of database: 
                           The Johns Hopkins University
                           Johns Hopkins Road
                           Laurel, MD 20707
                           (301) 953-6231
+
 
 ### License
 This project is licensed under the MIT License. See the LICENSE file for details.
